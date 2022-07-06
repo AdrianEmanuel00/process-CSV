@@ -1,0 +1,12 @@
+{ 
+  "First_Name":"Adrian",
+  "Last_Name":"Rotaru",
+  "Birth_Date":"28-02-2000",
+  "Height":"1.85m",
+  "Weight":"75kg",
+  "Billing_Street":"Strada Primaverii",
+  "Billing_City":"Slatina",
+  "Billing_State":"Olt",
+  "Billing_Postal_Code":"230012",
+  "Billing_Country":"Romania"
+}

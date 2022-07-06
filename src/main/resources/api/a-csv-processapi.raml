@@ -1,0 +1,67 @@
+#%RAML 1.0
+title: A-CSV-ProcessAPI
+types:
+  Client:
+    type: !include /Types/process-type.raml
+    example: !include /Examples/process-example.json
+  Client_Response:
+    type: !include /Types/client_response-type.raml
+    example:  !include /Examples/client_response-example.json
+  Error:
+    type: !include /Error/Types/error-type.raml
+  Response_Curat:
+    type: !include /Types/response_curat-type.raml
+    example:  !include /Examples/response_curat-example.json
+
+/Client:
+  get:
+    responses:
+      200:
+        body:
+          application/json:
+            Response_Curat[]
+      404:
+        body:
+          application/json:
+            # type: Error
+            example:
+              !include /Error/Examples/error404-example.json
+  post:
+    body:
+      application/json:
+        Client
+    responses:
+      201:
+        body:
+          application/json:
+            example:
+              Caut cheia, caut cheia!
+      400:
+        body:
+          application/json:
+            # type: Error
+            example:
+              !include /Error/Examples/error400-example.json
+
+  delete:
+    queryParameters:
+      ClientID:
+        type: string
+    responses:
+      200:
+        body:
+          application/txt:
+            example:
+              Successfully rewrited!
+      404:
+        body:
+          application/json:
+            # type: Error
+            example:
+              !include /Error/Examples/error404-example.json
+      400:
+         body:
+          application/json:
+            # type: Error
+            example:
+              !include /Error/Examples/error400-example.json
